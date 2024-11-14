@@ -2,19 +2,19 @@ import React from "react";
 
 import "./PasswordTitle.css";
 
-const PasswordTitle = ()=>{
+const PasswordTitle = (props)=>{
 
-    let passwordCount =0 ;
+    
 
     return (
             <div className="title">
 
                 <h1> Password Keeper</h1>
                 <div>
-                    <p>Total Passwords: {passwordCount}</p>
+                    <p>Total Passwords : {props.passwordCount-1}</p>
                 </div>
                 <div>
-                    <label htmlFor="seach">Search :</label>
+                    <label htmlFor="seach">Search : </label>
                     <input type="text" name="search"  id="search"></input>
                 </div>
             </div>

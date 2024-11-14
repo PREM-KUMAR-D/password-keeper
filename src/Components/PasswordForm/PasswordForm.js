@@ -1,9 +1,21 @@
 import React from "react";
 import "./PasswordForm.css";
 
-const PasswordForm = ()=>{
+const PasswordForm = (props)=>{
+    
+    
+
+    const formSubmitHandler =(event)=>{
+        event.preventDefault();
+        props.onAddForm(event.target.title.value,event.target.password.value);
+        event.target.title.value="";
+        event.target.password.value="";
+    }
+
+
+
     return (
-        <form>  
+        <form onSubmit={formSubmitHandler}>  
 
             <div>
                 <label htmlFor="title">Title : </label>
