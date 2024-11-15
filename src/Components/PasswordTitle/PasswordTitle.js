@@ -11,7 +11,7 @@ const PasswordTitle = (props)=>{
 
                 <h1> Password Keeper</h1>
                 <div>
-                    <p>Total Passwords : {props.passwordCount-1}</p>
+                    <p>Total Passwords : {props.passwordCount}</p>
                 </div>
                 <div>
                     <label htmlFor="seach">Search : </label>
