@@ -9,6 +9,8 @@ function App() {
   
   const [editingPassword,setEditingPassword] = useState(null);
 
+  const [searchQuery, setSearchQuery] = useState("");
+
 
   const formSubmitHandler = (title,password)=>{
     if (editingPassword) {
@@ -41,15 +43,23 @@ function App() {
     setEditingPassword(passwordToEdit);
   }
 
+  const handleSearchChange = (query) => {
+    setSearchQuery(query);
+  };
+
+  const filteredPasswords = passwords.filter((password) =>
+    password.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
 
 
   return (
     <>
-      <PasswordTitle passwordCount ={passwords.length}/>
+      <PasswordTitle passwordCount ={passwords.length} onSearch={handleSearchChange}/>
       <PasswordForm onAddForm={formSubmitHandler}
                     editingPassword={editingPassword} 
       />
-      <PasswordLists passwords={passwords} 
+      <PasswordLists passwords={filteredPasswords} 
                       onEdit={editHandler} 
                       onDelete={deleteHandler}
       />

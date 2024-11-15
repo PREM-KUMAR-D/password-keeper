@@ -4,6 +4,10 @@ import "./PasswordTitle.css";
 
 const PasswordTitle = (props)=>{
 
+    const searchHandler = (event) => {
+        props.onSearch(event.target.value); 
+      };
+
     
 
     return (
@@ -15,7 +19,7 @@ const PasswordTitle = (props)=>{
                 </div>
                 <div>
                     <label htmlFor="seach">Search : </label>
-                    <input type="text" name="search"  id="search"></input>
+                    <input type="text" name="search"  id="search" onChange={searchHandler} ></input>
                 </div>
             </div>
         
